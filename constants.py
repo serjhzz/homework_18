@@ -1,7 +1,7 @@
-# этот файл для глобальных констант. чтобы не хардкодить строки/числа в коде, выносите их сюда.
-# например вместо C:\\Windows в коде, создайте константу WINDOWS_PATH здесь и присвойте ей значение
+import os
+from pathlib import Path
 
-# Пример
-
-# CONSTANT_NAME = "value"
-# LOG_DIR = "logs"
+CONSTANT_NAME = "value"
+THIS_FOLDER = Path(__file__).parent.resolve()
+LOG_DIR = os.path.join(THIS_FOLDER, "logs")
+SQLITE_DB_NAME = 'sqlite:///movies.db'
